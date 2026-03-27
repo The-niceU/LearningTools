@@ -1,0 +1,17 @@
+.top-img{
+  width: 100%;
+  height: 320rpx;
+}
+.place{
+  padding: 15rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.place .name{
+  font-weight: bold;
+  color: #0B3B87;
+}
+.place .addr{
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 6rpx;
+}

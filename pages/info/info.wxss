@@ -1,0 +1,7 @@
+/* pages/info/info.wxss */
+.list{margin-top:8px;}
+.item{padding:10px 0;border-bottom:1px solid #eee;color:#333;}
+.calendar .row{padding:8px 0;color:#666;}
+.lecture{padding:10px 0;border-bottom:1px solid #eee;}
+.lecture .name{font-weight:600;color:#0B3B87;}
+.lecture .time{font-size:12px;color:#999;margin-top:4px;}

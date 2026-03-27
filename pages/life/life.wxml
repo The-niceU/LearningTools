@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="card">
+    <view class="title">食堂信息</view>
+    <view class="canteen" wx:for="{{canteens}}" wx:key="name">
+      <view class="name">{{item.name}}</view>
+      <view class="time">营业时间：{{item.time}}</view>
+      <view class="food">推荐菜品：{{item.food}}</view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="title">快递服务</view>
+    <view class="express" wx:for="{{express}}" wx:key="name">
+      <view class="name">{{item.name}}</view>
+      <view class="address">{{item.address}}</view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="title">📝 失物招领发布</view>
+    <input placeholder="输入物品名称" bindinput="setGoods" value="{{goods}}"/>
+    <input placeholder="输入丢失地点" bindinput="setPlace" value="{{place}}" />
+    <button bindtap="submitLost">发布失物信息</button>
+    <view class="list" wx:if="{{lostList.length>0}}">
+      <view class="title-sm">📌 已发布失物</view>
+      <view class="item" wx:for="{{lostList}}" wx:key="index">
+        <view class="info">
+          <view>物品：{{item.goods}}</view>
+          <view>地点：{{item.place}}</view>
+        </view>
+      <button size="mini" type="warn" bindtap="deleteLost" data-index="{{index}}">删除</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="title">💬 意见反馈</view>
+    <input placeholder="请输入你的建议" bindinput="setContent" value="{{content}}"/>
+    <button bindtap="submitFeedback">提交反馈</button>
+
+    <view class="list" style="margin-top:15px" wx:if="{{feedbackList.length>0}}">
+      <view class="title-sm">📩 历史反馈</view>
+      <view class="item" wx:for="{{feedbackList}}"        wx:key="index">
+        <view class="info">
+          <view>{{item}}</view>
+        </view>
+        <button size="mini" type="warn" bindtap="deleteFeedback" data-index="{{index}}">删除</button>  
+      </view>
+    </view>
+  </view>
+</view>

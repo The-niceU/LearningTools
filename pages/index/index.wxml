@@ -1,0 +1,48 @@
+<view class="container">
+  <!-- 轮播图 -->
+  <swiper class="swiper" indicator-dots autoplay circular>
+    <swiper-item>
+      <image src="/images/banner1.jpeg" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/banner2.jpeg" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/banner3.jpeg" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/banner4.jpeg" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 功能菜单 -->
+  <view class="card">
+    <view class="title">功能中心</view>
+    <view class="menu">
+      <view class="item" bindtap="goInfo">
+        <text>📢</text>
+        <text>校园信息</text>
+      </view>
+      <view class="item" bindtap="goTool">
+        <text>📅</text>
+        <text>课表工具</text>
+      </view>
+      <view class="item" bindtap="goLife">
+        <text>🍜</text>
+        <text>校园生活</text>
+      </view>
+      <view class="item" bindtap="goMap">
+        <text>🗺️</text>
+        <text>校园地图</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 公告 -->
+  <view class="card">
+    <view class="title">最新公告</view>
+    <view class="notice" wx:for="{{notices}}" wx:key="index">
+      • {{item}}
+    </view>
+  </view>
+</view>

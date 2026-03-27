@@ -1,0 +1,25 @@
+<view class="container">
+  <!-- 校园图片 -->
+  <image src="/images/map1.png" class="top-img"></image>
+
+  <!-- 地图 -->
+  <view class="card">
+    <view class="title">川大校园地图</view>
+    <map
+      longitude="103.9997"
+      latitude="30.5576"
+      scale="16"
+      markers="{{markers}}"
+      style="width:100%;height:400rpx;border-radius:10rpx"
+    ></map>
+  </view>
+
+  <!-- 地标列表 -->
+  <view class="card">
+    <view class="title">校园地标</view>
+    <view class="place" wx:for="{{places}}" wx:key="index" bindtap="showPlace" data-item="{{item}}">
+      <view class="name">{{item.name}}</view>
+      <view class="addr">{{item.addr}}</view>
+    </view>
+  </view>
+</view>

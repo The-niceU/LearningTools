@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="card">
+    <view class="title">我的课表</view>
+    <view class="schedule" wx:for="{{schedule}}" wx:key="index">
+      <view class="day">{{item.day}}</view>
+      <view class="courses" wx:for="{{item.courses}}" wx:key="name">
+        <view class="course">{{item.name}} {{item.time}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="card">
+    <view class="title">🌤 成都校园天气</view>
+    <view>温度：{{weather.temp}}℃</view>
+    <view>天气：{{weather.info}}</view>
+  </view>
+  <view class="card">
+    <view class="title">空教室查询</view>
+    <view class="empty-room" wx:for="{{emptyRooms}}" wx:key="index">
+      <view class="room">{{item.building}} {{item.room}} 今日可用</view>
+    </view>
+  </view>
+
+  <view class="card">
+  <view class="title">☎️ 快捷拨号</view>
+  <view class="phone" wx:for="{{phones}}">
+    <view class="name">{{item.name}}</view>
+    <view class="num">{{item.num}}</view>
+    <button size="mini" bindtap="makeCall" data-num="{{item.num}}">拨号</button>
+    <button size="mini" bindtap="copyNum" data-num="{{item.num}}">复制</button>
+  </view>
+</view>
+</view>

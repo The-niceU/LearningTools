@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/info/info",
+    "pages/tool/tool",
+    "pages/life/life",
+    "pages/map/map"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "川大校园助手",
+    "navigationBarBackgroundColor": "#0B3B87",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#0B3B87",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "text": "校园信息"
+      },
+      {
+        "pagePath": "pages/tool/tool",
+        "text": "校园工具"
+      },
+      {
+        "pagePath": "pages/life/life",
+        "text": "校园生活"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "text": "校园地图"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

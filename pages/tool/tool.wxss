@@ -1,0 +1,11 @@
+/* pages/tool/tool.wxss */
+.box{padding:15px;}
+.kebiao{background:white; border-radius:8px; padding:10px;}
+.row{padding:12px; border-bottom:1px solid #eee;}
+
+.schedule .day{font-weight:600;color:#0B3B87;margin:8px 0;}
+.schedule .course{padding:6px 0;color:#333;}
+.empty-room{padding:8px 0;border-bottom:1px solid #eee;color:#333;}
+.phone{padding:10px 0;border-bottom:1px solid #eee;}
+.phone .name{font-weight:600;}
+.phone .num{color:#0B3B87;margin-top:4px;}

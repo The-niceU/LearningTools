@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="card">
+    <view class="title" bindtap="toggleNotice">校园通知 {{showNotice ? '▼' : '▲'}}</view>
+    <view wx:if="{{showNotice}}">
+      <view class="list" wx:for="{{notices}}" wx:key="index">
+        <view class="item">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="title" bindtap="toggleCalendar">校历安排 {{showCalendar ? '▼' : '▲'}}</view>
+    <view wx:if="{{showCalendar}}">
+      <view class="calendar" wx:for="{{calendars}}" wx:key="index">
+        <view class="item">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="title" bindtap="toggleLecture">学术讲座 {{showLecture ? '▼' : '▲'}}</view>
+    <view wx:if="{{showLecture}}">
+      <view class="lecture" wx:for="{{lectures}}" wx:key="index">
+        <view class="name">{{item.name}}</view>
+        <view class="time">{{item.time}}</view>
+      </view>
+    </view>
+  </view>
+</view>
