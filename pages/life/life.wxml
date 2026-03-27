@@ -28,7 +28,7 @@
           <view>物品：{{item.goods}}</view>
           <view>地点：{{item.place}}</view>
         </view>
-      <button size="mini" type="warn" bindtap="deleteLost" data-index="{{index}}">删除</button>
+      <button  wx:if="{{item.openid == openid}}" size="mini" type="warn" bindtap="deleteLost" data-index="{{index}}">删除</button>
       </view>
     </view>
   </view>
@@ -38,13 +38,14 @@
     <input placeholder="请输入你的建议" bindinput="setContent" value="{{content}}"/>
     <button bindtap="submitFeedback">提交反馈</button>
 
-    <view class="list" style="margin-top:15px" wx:if="{{feedbackList.length>0}}">
+    <view class="list" style="margin-top:15px" wx:if="{{feedbackList.length > 0}}">
       <view class="title-sm">📩 历史反馈</view>
       <view class="item" wx:for="{{feedbackList}}"        wx:key="index">
         <view class="info">
-          <view>{{item}}</view>
+          <view>{{item.content || item}}</view>
         </view>
-        <button size="mini" type="warn" bindtap="deleteFeedback" data-index="{{index}}">删除</button>  
+        <button wx:if="{{item.openid == openid}}" 
+  size="mini" type="warn" bindtap="deleteFeedback" data-index="{{index}}">删除</button>  
       </view>
     </view>
   </view>

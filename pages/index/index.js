@@ -3,10 +3,36 @@ const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia0
 
 Page({
   data: {
-    notices: ["期末考试安排已公布","图书馆开放时间调整","校园网维护通知"]
+    notices: [
+      {
+      id: 1,
+      title: "期末考试安排已公布",
+      detailUrl: "/pages/noticeDetail/noticeDetail?id=1"
+    },
+    {
+      id: 2,
+      title: "图书馆开放时间调整",
+      detailUrl: "/pages/noticeDetail/noticeDetail?id=2"
+    },
+    {
+      id: 3,
+      title: "校园网维护通知",
+      detailUrl: "/pages/noticeDetail/noticeDetail?id=3"
+    }
+  ]
   },
-  goInfo(){wx.navigateTo({url:"/pages/info/info"})},
-  goTool(){wx.navigateTo({url:"/pages/tool/tool"})},
-  goLife(){wx.navigateTo({url:"/pages/life/life"})},
+
+// 公告点击跳转函数
+goNoticeDetail(e) {
+  // 获取当前点击项绑定的详情页 URL
+  const targetUrl = e.currentTarget.dataset.url;
+  wx.navigateTo({
+    url: targetUrl
+  });
+},
+
+  goInfo(){wx.switchTab({url:"/pages/info/info"})},
+  goTool(){wx.switchTab({url:"/pages/tool/tool"})},
+  goLife(){wx.switchTab({url:"/pages/life/life"})},
   goMap(){wx.navigateTo({url:"/pages/map/map"})}
 })

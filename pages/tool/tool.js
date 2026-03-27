@@ -39,32 +39,57 @@ Page({
     this.getWeather();
   },
 
-  // 获取天气
-  getWeather() {
-    wx.request({
-      url: 'https://api.openweathermap.org/data/2.5/weather?q=Chengdu&appid=42c341777c384c7c3e1b869eaccb0f34&units=metric&lang=zh_cn',
-      success: res => {
-        if (res.data.main) {
-          this.setData({
-            weather: {
-              temp: res.data.main.temp,
-              info: res.data.weather[0].description
-            }
-          });
-        }
-      },
-      fail: () => {
-        this.setData({
-          weather: { temp: '22', info: '晴' }
+// 获取天气（新免费IP定位API，无需传城市参数）
+getWeather() {
+  const that = this;
+  wx.request({
+    // 接口地址（直接复制）
+    url: 'https://v.api.aa1.cn/api/api-tianqi-6/?city=成都',
+    // 请求方式：GET（和接口文档一致）
+    method: 'GET',
+    success: (res) => {
+      console.log("天气API返回:", res.data); // 调试用，可删除
+      // 接口返回成功（判断状态码）
+      if (res.data.code === "200" || res.statusCode === 200) {
+        that.setData({
+          weather: {
+            temp: res.data.temperature,  // 温度（对应接口返回的temperature）
+            info: res.data.weather,      // 天气状况（对应接口返回的weather）
+            city: res.data.city,         // 当前IP所在城市（自动获取）
+            date: res.data.date,         // 日期
+            wind: res.data.manner,       // 风向风度
+            air: res.data.air_uality    // 空气质量
+          }
+        });
+      } else {
+        wx.showToast({
+          title: '天气数据获取失败',
+          icon: 'none'
         });
       }
-    });
-  },
+    },
+    
+  });
+},
 
   makeCall(e){
     wx.makePhoneCall({phoneNumber:e.currentTarget.dataset.num})
   },
   copyNum(e){
     wx.setClipboardData({data:e.currentTarget.dataset.num})
-  }
+  },
+  // 跳转到校园地图页面
+goToMap() {
+  wx.navigateTo({
+    url: '/pages/map/map',
+    // 增加跳转动画和提示
+    success: () => {
+      wx.showToast({
+        title: '加载地图中...',
+        icon: 'none',
+        duration: 800
+      })
+    }
+  })
+}
 })

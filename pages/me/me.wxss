@@ -1,0 +1,177 @@
+/* 个人中心页面样式 */
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+/* 未登录样式 - 保持你原来的容器长度，仅修复挤压感 */
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80rpx 40rpx; /* 微调上下padding，让容器更舒展 */
+  background: #fff;
+  border-radius: 16rpx;
+  margin-top: 40rpx;
+}
+
+.login-tip {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 40rpx;
+}
+
+.avatar-btn {
+  /* 强制宽高相等，important防止被其他样式覆盖 */
+  width: 200rpx !important;
+  height: 200rpx !important;
+  border-radius: 50%; /* 正圆 */
+  overflow: hidden; /* 裁剪超出圆形的部分 */
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 auto 40rpx;
+  /* 内部图片居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 彻底清除小程序按钮默认边框（关键！避免容器变形） */
+.avatar-btn::after {
+  border: none;
+}
+
+/*  核心修复：头像图片（强制填充为正方形，裁剪多余部分） */
+.default-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 核心：按比例填充容器，裁剪超出部分，不会变形 */
+  display: block;
+}
+
+.nickname-input {
+  width: 400rpx;
+  height: 80rpx;
+  border: 1px solid #eee;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+
+.login-btn {
+  width: 400rpx;
+  height: 88rpx;
+  background: #0052d9;
+  color: #fff;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  border: none;
+}
+
+.login-btn::after {
+  border: none;
+}
+
+.login-btn[disabled] {
+  background: #ccc;
+}
+
+/* 已登录样式（完全不变） */
+.user-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  margin-top: 20rpx;
+}
+
+/* 登录后头像同步修复 */
+.user-avatar {
+  width: 120rpx !important;
+  height: 120rpx !important;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20rpx;
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.user-id {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 卡片样式（完全不变） */
+.card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.empty-tip {
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.item {
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item-title {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.item-desc {
+  font-size: 26rpx;
+  color: #666;
+}
+
+/* 退出按钮（完全不变） */
+.logout-btn {
+  width: 100%;
+  height: 88rpx;
+  background: #fff;
+  color: #ff3b30;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  border: none;
+  margin-top: 20rpx;
+}
+
+.logout-btn::after {
+  border: none;
+}

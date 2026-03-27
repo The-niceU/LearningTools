@@ -5,7 +5,9 @@
     "pages/info/info",
     "pages/tool/tool",
     "pages/life/life",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/me/me",
+    "pages/noticeDetail/noticeDetail"
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -21,23 +23,33 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "images/tab/index.png",
+        "selectedIconPath": "images/tab/index-active.png"
       },
       {
         "pagePath": "pages/info/info",
-        "text": "校园信息"
+        "text": "校园信息",
+        "iconPath": "images/tab/info.png",
+        "selectedIconPath": "images/tab/info-active.png"
       },
       {
         "pagePath": "pages/tool/tool",
-        "text": "校园工具"
+        "text": "校园工具",
+        "iconPath": "images/tab/tool.png", 
+        "selectedIconPath": "images/tab/tool-active.png"
       },
       {
         "pagePath": "pages/life/life",
-        "text": "校园生活"
-      },
+        "text": "校园生活",
+        "iconPath": "images/tab/life.png", 
+        "selectedIconPath": "images/tab/life-active.png"
+      },     
       {
-        "pagePath": "pages/map/map",
-        "text": "校园地图"
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/tab/me.png", 
+        "selectedIconPath": "images/tab/me-active.png" 
       }
     ]
   },

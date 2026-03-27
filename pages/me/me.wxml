@@ -1,0 +1,46 @@
+<!-- 个人中心页面 -->
+<view class="container">
+  <!-- 未登录状态 -->
+  <view class="login-box" wx:if="{{!isLogin}}">
+    <view class="login-tip">登录后可管理你的个人信息</view>
+    <!-- 微信头像获取 -->
+    <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <image class="default-avatar" src="{{avatarUrl || '/images/map1.png'}}" 
+    mode="aspectFill" mode="aspectFill"></image>
+    </button>
+    <!-- 微信昵称获取 -->
+    <input class="nickname-input" type="nickname" placeholder="点击输入你的昵称" bindblur="onInputNickname" />
+    <button class="login-btn" bindtap="submitLogin" disabled="{{!avatarUrl || !nickname}}">一键登录</button>
+  </view>
+
+  <!-- 已登录状态 -->
+  <view class="user-box" wx:if="{{isLogin}}">
+    <view class="user-info">
+      <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+      <view class="user-name">{{userInfo.nickname}}</view>
+      <view class="user-id">用户ID：{{openid}}</view>
+    </view>
+
+    <!-- 我的发布 -->
+    <view class="card">
+      <view class="card-title">我的失物招领</view>
+      <view class="empty-tip" wx:if="{{lostList.length == 0}}">暂无发布的失物信息</view>
+      <view class="item" wx:for="{{lostList}}" wx:key="index">
+        <view class="item-title">物品：{{item.goods}}</view>
+        <view class="item-desc">地点：{{item.place}}</view>
+      </view>
+    </view>
+
+    <!-- 我的反馈 -->
+    <view class="card">
+      <view class="card-title">我的意见反馈</view>
+      <view class="empty-tip" wx:if="{{feedbackList.length == 0}}">暂无提交的反馈</view>
+      <view class="item" wx:for="{{feedbackList}}" wx:key="index">
+        <view class="item-desc">{{item.content}}</view>
+      </view>
+    </view>
+
+    <!-- 退出登录 -->
+    <button class="logout-btn" bindtap="logout">退出登录</button>
+  </view>
+</view>

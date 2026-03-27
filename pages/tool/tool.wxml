@@ -10,8 +10,11 @@
   </view>
   <view class="card">
     <view class="title">🌤 成都校园天气</view>
-    <view>温度：{{weather.temp}}℃</view>
+    <view>温度：{{weather.temp}}</view>
     <view>天气：{{weather.info}}</view>
+    <view class="wind">风向：{{weather.wind}}</view>
+    <view class="air">空气质量：{{weather.air}}</view>
+    <view class="date">日期：{{weather.date}}</view>
   </view>
   <view class="card">
     <view class="title">空教室查询</view>
@@ -29,4 +32,16 @@
     <button size="mini" bindtap="copyNum" data-num="{{item.num}}">复制</button>
   </view>
 </view>
+
+<view class="tool-card" bindtap="goToMap">
+      <view class="card-icon">
+        <image src="/images/banner1.jpeg" mode="aspectFit"></image>
+      </view>
+      <view class="card-content">
+        <view class="card-title">校园地图</view>
+        <view class="card-desc">查看川大江安/望江校区详细地图</view>
+      </view>
+      <view class="card-arrow">→</view>
+    </view>
+
 </view>
