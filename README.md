@@ -91,7 +91,7 @@ git clone https://github.com/你的用户名/仓库名.git
 
 #### 3. 配置说明
 
-- 若使用天气 API，可在 pages/tool/tool.js 中替换为自己的 API 密钥
+- 若使用天气 API，可在 ```pages/tool/tool.js``` 中替换为自己的 API 密钥
 - 测试阶段可在微信开发者工具中勾选「不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书」
 - 
 #### 4. 运行项目
@@ -123,9 +123,9 @@ scu-campus-miniprogram/
 
 欢迎任何形式的贡献！如果你有好的想法或发现了 bug，欢迎：
 1. Fork 本仓库
-2. 创建新的分支 (git checkout -b feature/AmazingFeature)
-3. 提交你的更改 (git commit -m 'Add some AmazingFeature')
-4. 推送到分支 (git push origin feature/AmazingFeature)
+2. 创建新的分支 (```git checkout -b feature/AmazingFeature```)
+3. 提交你的更改 (```git commit -m 'Add some AmazingFeature'```)
+4. 推送到分支 (```git push origin feature/AmazingFeature```)
 5. 开启一个 Pull Request
 📄 许可证
 本项目采用 MIT 许可证 - 查看 [LICENSE](MIT) 文件了解详情
